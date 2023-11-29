@@ -3,3 +3,7 @@
 source "https://rubygems.org"
 
 # gem "rails"
+
+group :development do
+  gem "rubocop", require: false
+end
