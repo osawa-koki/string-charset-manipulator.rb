@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  workflow_dispatch:
+  push:
+    tags: [ v-* ]
+
+jobs:
+  cd:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        ruby-version: ['3.2.2']
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+        bundler-cache: true
+    - name: Run Rubocop
+      run: bundle exec rubocop
