@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'nkf'
 
 paths = [
-  "./data/utf8.txt",
-  "./data/sjis.txt",
-  "./data/eucjp.txt",
+  './data/utf8.txt',
+  './data/sjis.txt',
+  './data/eucjp.txt'
 ]
 
 paths.each do |path|
